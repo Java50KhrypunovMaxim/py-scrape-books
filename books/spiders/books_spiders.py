@@ -1,10 +1,3 @@
-from pathlib import Path
-
-import scrapy
-from requests import Response
-
-from books.items import BookItem
-
 import scrapy
 from books.items import BookItem
 
@@ -27,8 +20,6 @@ class BooksSpidersSpider(scrapy.Spider):
 
     def parse_book(self, response):
         item = BookItem()
-
-        # Extracting book details
         item['title'] = response.css('div.product_main h1::text').get()
         item['price'] = response.css('p.price_color::text').get()
         item['amount_in_stock'] = response.css(
