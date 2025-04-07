@@ -6,3 +6,4 @@ pep8-naming==0.13.2
 
 Scrapy~=2.12.0
 itemadapter~=0.11.0
+requests~=2.32.3
